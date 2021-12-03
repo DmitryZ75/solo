@@ -176,7 +176,7 @@
 	#banner {margin-top: -65px;}
 	.hephaistos.tparrows.tp-leftarrow {left:-30px !important;}
 	.hephaistos.tparrows.tp-rightarrow {left: calc(100% + 30px) !important;}
-	h1 {font-size: 10px;}
+
 }
 /*(max-width: 991px)*/
 /*----------------------------------------*/
@@ -195,7 +195,7 @@
 	.client_feedback_main_content .feedback_single_client .author h6 {font-size: 15px;}
 	.shop_single_page .product_details .product-review-tab .item_review_content .text {width: 89%;}
 	.shop_cart_table .table-2 td span {padding: 0 8px;}
-	h1 {font-size: 10px;}
+	
 }
 /*(min-width: 768px) and (max-width: 991px)*/
 /*----------------------------------------*/
@@ -231,7 +231,7 @@
 	.table-responsive {border:none;}
 	.cart .shop_cart_table .cart_btn2 {float:none;}
 	.account_page .register_form {margin-top: 50px;}
-	#banner h1 {font-size: 45px;line-height: 65px; padding-bottom: 12px;}
+	#banner h1 {font-size: 25px;line-height: 65px; padding-bottom: 12px;}
 	#banner p {font-size: 20px;line-height: 30px;}
 	.switcher .switch_menu .switch_body .box,.switcher .switch_menu .switch_navigation,.switcher .switch_menu .switcher_container h5.fix_space {
 		margin-top:10px;
