@@ -519,7 +519,7 @@ header .top_header ul li:last-child {
 
 /*======================= Main Banner ======================*/
 #banner {
-  margin-top: -65px;
+  margin-top: 10px;
 }
 #rev_slider {
   overflow: hidden;
