@@ -382,7 +382,7 @@ header .top_header ul li:last-child {
 }
 .theme_menu.fixed .menuzord {
   float:right !important;
-  width:78%;
+  width:65%;
 }
 .theme_menu.fixed .menuzord-menu ul.dropdown li ul.dropdown {
   left:-101%;
