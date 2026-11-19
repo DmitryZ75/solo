@@ -1,53 +1,86 @@
-/* Replacement for Revolution Slider; retains site's original theme CSS/fonts. */
+/* Sololaki Advisors banner — original-theme styling, CSP safe.
+   Keep css/style.css, css/responsive.css and css/color.css unchanged. */
 #banner.sol-banner {
-    position: relative;
-    height: 550px;
-    overflow: hidden;
-    background: #243443;
+  position: relative;
+  width: 100%;
+  height: clamp(430px, 43vw, 650px);
+  overflow: hidden;
+  background-color: #172735;
+  isolation: isolate;
 }
 #banner.sol-banner .sol-slide {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    animation: solCrossfade 12s linear infinite;
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  animation: solBannerFade 12s ease-in-out infinite;
+  will-change: opacity;
 }
 #banner.sol-banner .sol-slide-first {
-    background-image: url('../images/home/slide-1.jpg');
+  background-image: url('../images/home/slide-1.jpg');
+  animation-delay: 0s;
 }
 #banner.sol-banner .sol-slide-second {
-    background-image: url('../images/home/slide-2.jpg');
-    background-position: top center;
-    animation-delay: -6s;
+  background-image: url('../images/home/slide-2.jpg');
+  background-position: top center;
+  animation-delay: -6s;
+}
+/* Soft contrast only behind the caption; keeps original photographs intact. */
+#banner.sol-banner .sol-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.21), transparent 58%);
+  pointer-events: none;
+}
+#banner.sol-banner .sol-slide-second::after {
+  background: linear-gradient(270deg, rgba(0,0,0,.21), transparent 58%);
 }
 #banner.sol-banner .sol-slide-container {
-    width: 100%;
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  /* Original Revolution Slider used a vertical offset of -82px. */
+  padding-bottom: 82px;
 }
 #banner.sol-banner h1 {
-    color: #fff;
-    font-family: inherit;
-    font-size: clamp(28px, 3.4vw, 48px);
-    font-weight: 600;
-    line-height: 1.3;
-    margin: 0;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, .38);
+  /* Deliberately inherit the original site's typography rather than
+     introducing a new font family or weight. */
+  color: #fff;
+  font-family: inherit;
+  font-size: clamp(30px, 3.1vw, 48px);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-transform: none;
+  margin: 0;
+  max-width: 770px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.22);
+}
+#banner.sol-banner .sol-slide-second .sol-slide-container {
+  justify-content: flex-end;
 }
 #banner.sol-banner .sol-slide-second h1 { text-align: right; }
-@keyframes solCrossfade {
-    0%, 44% { opacity: 1; visibility: visible; }
-    50%, 94% { opacity: 0; visibility: hidden; }
-    100% { opacity: 1; visibility: visible; }
+@keyframes solBannerFade {
+  0%, 42% {opacity:1;}
+  50%, 92% {opacity:0;}
+  100% {opacity:1;}
 }
 @media (max-width: 767px) {
-    #banner.sol-banner { height: 380px; }
-    #banner.sol-banner .sol-slide-container { padding-left: 20px; padding-right: 20px; }
+  #banner.sol-banner { height: 400px; }
+  #banner.sol-banner .sol-slide-container {
+    padding: 0 22px 50px;
+    align-items: center;
+  }
+  #banner.sol-banner h1 {font-size: clamp(26px, 6vw, 38px); line-height: 1.25;}
 }
 @media (prefers-reduced-motion: reduce) {
-    #banner.sol-banner .sol-slide { animation: none; }
-    #banner.sol-banner .sol-slide-second { display: none; }
+  #banner.sol-banner .sol-slide {animation: none;}
+  #banner.sol-banner .sol-slide-second {display: none;}
 }
