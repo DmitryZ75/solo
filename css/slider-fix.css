@@ -162,3 +162,27 @@
   #banner.sol-banner .sol-slide { animation: none; }
   #banner.sol-banner .sol-slide-second { display: none; }
 }
+/* Align logo with main content */
+.bottom_header .container > a.logo {
+    position: relative !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    flex-shrink: 0;
+}
+
+.bottom_header .container {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Fix Bootstrap clearfix inside flex header */
+.bottom_header .container::before,
+.bottom_header .container::after {
+    display: none !important;
+    content: none !important;
+}
